@@ -16,14 +16,14 @@ private:
 	list<string> encodeToList(ifstream& file) const;
 	istream_iterator<char> eos;
 public:	
-	void encode(string filename, string result_filename);
-	void encode();
+	void encode(string filename, string result_filename) const;
+	void encode() const;
 	OctetStringASN(){};
 	~OctetStringASN(){};
 };
 
 #endif
-void OctetStringASN::encode(){
+void OctetStringASN::encode() const{
 	list<string> res;
 	try{
 		res = this->encodeToList();
@@ -35,7 +35,7 @@ void OctetStringASN::encode(){
 	}
 	cout << '\n';
 }
-void OctetStringASN::encode(string filename, string result_filename){
+void OctetStringASN::encode(string filename, string result_filename) const {
 	ifstream file;
 	file.open(filename);
 	if(!file){

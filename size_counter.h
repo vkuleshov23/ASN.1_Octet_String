@@ -96,12 +96,18 @@ bool SizeCounter::isShortForm() const {
 }
 
 bool SizeCounter::blockSizeIsOne() const {
+	if(this->blocs_size_in_hex.size() > 2){
+		return false;
+	}
 	if(this->blocs_size_in_hex[0] == '1' && this->blocs_size_in_hex.size() <= 2){
 		return true;
 	}
 	return false;
 }
 bool SizeCounter::sizeIsMore127() const {
+	if(this->size_in_hex.size() > 2){
+		return false;
+	}
 	switch(size_in_hex[1]){
 		case '8':
 			return true;
