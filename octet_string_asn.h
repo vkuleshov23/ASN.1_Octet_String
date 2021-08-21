@@ -1,3 +1,5 @@
+#ifndef _OCTET_STRING_
+#define _OCTET_STRING_
 #include "size_counter.h"
 #include "exception.h"
 #include <string>
@@ -5,8 +7,6 @@
 #include <fstream>
 #include <iostream>
 #include <cstdio>
-#ifndef _OCTET_STRING_
-#define _OCTET_STRING_
 using namespace std;
 class OctetStringASN{
 private:
